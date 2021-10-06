@@ -3,10 +3,6 @@ import SpotifyWebApi from "spotify-web-api-node"
 import cors from "cors"
 import mongoose from "mongoose"
 import listEndpoints from "express-list-endpoints"
-import dotenv from "dotenv"
-
-dotenv.config()
-
 
 const server = express()
 server.use(cors())
