@@ -2,8 +2,11 @@ import express from "express"
 import SpotifyWebApi from "spotify-web-api-node"
 import cors from "cors"
 import mongoose from "mongoose"
+import listEndpoints from "express-list-endpoints"
+import dotenv from "dotenv"
 
-console.log(process.env.MONGO_CONNECTION)
+dotenv.config()
+
 
 const server = express()
 server.use(cors())
@@ -15,7 +18,7 @@ server.post("/login", (req, res) => {
   const code = req.body.code.code
 
   const spotifyApi = new SpotifyWebApi({
-    redirectUri: "http://localhost:3000",
+    redirectUri: "https://strivify.vercel.app",
     clientId: "ede976d713b14614b050b8afe5c3ac0c",
     clientSecret: "00e9ab0a66684138bcc0a27905299f29"
   }
